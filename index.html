@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Big Music Player</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1e1e2f, #3a3a5a);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .player {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 450px;
+    }
+
+    .player h2 {
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    #song-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    audio {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .controls button {
+      background-color: #3a3a5a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background-color: #5a5a8a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="player">
+    <h2>🎵 Now Playing</h2>
+    <p id="song-title">Relaxing Beat</p>
+
+    <audio id="audio" controls>
+      <source src="your-audio.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="controls">
+      <button onclick="playAudio()">▶ Play</button>
+      <button onclick="pauseAudio()">⏸ Pause</button>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById("audio");
+
+    function playAudio() {
+      audio.play();
+    }
+
+    function pauseAudio() {
+      audio.pause();
+    }
+  </script>
+
+</body>
+</html>
